@@ -2,9 +2,9 @@
 
 ## How do I install these formulae?
 
-`brew install meeuw/aws-credential-process/<formula>`
+`brew install meeuw/aws-credential-process/aws-credential-process`
 
-Or `brew tap meeuw/aws-credential-process` and then `brew install <formula>`.
+Or `brew tap meeuw/aws-credential-process` and then `brew install aws-credential-process`.
 
 ## Documentation
 
