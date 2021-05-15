@@ -1,7 +1,7 @@
 class AwsCredentialProcess < Formula
   include Language::Python::Virtualenv
 
-  desc "Script to use as credential_process for the AWS CLI (including boto3) and can use a Yubi key to authenticate."
+  desc "Script to use as credential_process for the AWS CLI (including boto3)"
   homepage "https://github.com/meeuw/aws-credential-process"
   url "https://files.pythonhosted.org/packages/6d/cc/14d173d974f128d3369883b6fac1b8829af1236cba5d97e28a57a32fd71d/aws-credential-process-0.12.0.tar.gz"
   sha256 "6986bcf7b57e18eead0a57b6d022e0d61455b8daca4533a2494804f9a7a35372"
