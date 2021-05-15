@@ -3,8 +3,8 @@ class AwsCredentialProcess < Formula
 
   desc "Script to use as credential_process for the AWS CLI (including boto3)"
   homepage "https://github.com/meeuw/aws-credential-process"
-  url "https://files.pythonhosted.org/packages/6d/cc/14d173d974f128d3369883b6fac1b8829af1236cba5d97e28a57a32fd71d/aws-credential-process-0.12.0.tar.gz"
-  sha256 "6986bcf7b57e18eead0a57b6d022e0d61455b8daca4533a2494804f9a7a35372"
+  url "https://files.pythonhosted.org/packages/a9/4f/5251300b4bce3920ac522d96d8604511e33481a615c09e1b0ea6c512dbcc/aws-credential-process-0.14.0.tar.gz"
+  sha256 "f911642c6caf2b070ceed02d93d5d6614116d02ac2df45d02ffd4fcf1bc79af4"
   license "GPL-3.0-or-later"
   head "https://github.com/meeuw/aws-credential-process.git"
 
