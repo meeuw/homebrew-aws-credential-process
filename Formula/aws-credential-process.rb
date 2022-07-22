@@ -8,9 +8,6 @@ class AwsCredentialProcess < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/meeuw/aws-credential-process.git"
 
-  bottle do
-  end
-
   depends_on "rust" => :build
   depends_on "swig" => :build
   depends_on "openssl@1.1"
