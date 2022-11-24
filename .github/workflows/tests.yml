@@ -23,6 +23,8 @@ jobs:
           key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
           restore-keys: ${{ runner.os }}-rubygems-
 
+      - run: sudo rm /Library/Frameworks/Python.framework/Versions/Current/bin/python3-config /Library/Frameworks/Python.framework/Versions/Current/bin/python3.11-config
+
       - name: Install Homebrew Bundler RubyGems
         if: steps.cache.outputs.cache-hit != 'true'
         run: brew install-bundler-gems
