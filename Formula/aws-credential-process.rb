@@ -3,22 +3,15 @@ class AwsCredentialProcess < Formula
 
   desc "Script to use as credential_process for the AWS CLI (including boto3)"
   homepage "https://github.com/meeuw/aws-credential-process"
-  url "https://files.pythonhosted.org/packages/a6/11/02314a0fb7ef554bb5d5fee6bc047f05c2612d16b6d434bc47288b0521d3/aws-credential-process-0.16.0.tar.gz"
-  sha256 "a64ff9ef7993e0ad0bdb668a020ef833b1755f3d0fdbfa1540ca16ff150aea23"
+  url "https://files.pythonhosted.org/packages/6e/47/c96cb5ad558c2bec061b1cfc869c31ae912ce8c4412ccaac1063fc6aed8b/aws-credential-process-0.20.0.tar.gz"
+  sha256 "822d16af4bffbcf2d2db35c12ae50028f5786210c1c6a785294dfb3c45cc4e5d"
   license "GPL-3.0-or-later"
   head "https://github.com/meeuw/aws-credential-process.git"
-
-  bottle do
-    root_url "https://github.com/meeuw/homebrew-aws-credential-process/releases/download/aws-credential-process-0.16.0"
-    rebuild 1
-    sha256 cellar: :any,                 big_sur:      "d06adf1c4687d863b6d67498d97e6550554fca67c5b8c321dcc64f339016b6a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1359cc0efdfb522e84811d3202af7cc7836644eb13329cdb0d6037f5efeecb39"
-  end
 
   depends_on "rust" => :build
   depends_on "swig" => :build
   depends_on "openssl@1.1"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   uses_from_macos "libffi"
 
@@ -28,16 +21,16 @@ class AwsCredentialProcess < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/76/95/c437b977c631f280b016bc8b34ca75aa3f3316143cc3411f02ed0ebf06d3/boto3-1.24.35.tar.gz"
-    sha256 "2bc600c88d963bbf98cb1244e34f5b7c889a861121b95041c6a47f917fa46748"
+    url "https://files.pythonhosted.org/packages/ad/6d/51d9cd7ce066aab16424c01e8e36d181c8a2354ae36c1142323ffbab3ed2/boto3-1.26.16.tar.gz"
+    sha256 "31c0adf71e4bd19a5428580bb229d7ea3b5795eecaa0847a85385df00c026116"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/6c/47/3f60500f6c26d6690ba92be09fdb5036e7bec5000096f459fe68b330ec1e/botocore-1.27.35.tar.gz"
-    sha256 "d2e708dd766b21c8e20a57ce1a90e98d324f871f81215efbc2dddaa42d13c551"
+    url "https://files.pythonhosted.org/packages/18/ea/e6c68fe2773ce0fb056f75e7558c87b4ec4aaf9eb9d6aa2b11b547cc6b96/botocore-1.29.16.tar.gz"
+    sha256 "8cfcc10f2f1751608c3cec694f2d6b5e16ebcd50d0a104f9914d5616227c62e9"
   end
 
-  resource "cfii" do
+  resource "cffi" do
     url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
     sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
   end
@@ -48,13 +41,23 @@ class AwsCredentialProcess < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/89/d9/5fcd312d5cce0b4d7ee8b551a0ea99e4ea9db0fdbf6dd455a19042e3370b/cryptography-37.0.4.tar.gz"
-    sha256 "63f9c17c0e2474ccbebc9302ce2f07b55b3b3fcb211ded18a42d5764f5c10a82"
+    url "https://files.pythonhosted.org/packages/13/dd/a9608b7aebe5d2dc0c98a4b2090a6b815628efa46cc1c046b89d8cd25f4c/cryptography-38.0.3.tar.gz"
+    sha256 "bfbe6ee19615b07a98b1d2287d6a6073f734735b49ee45b11324d85efc4d5cbd"
   end
 
   resource "fido2" do
-    url "https://files.pythonhosted.org/packages/cd/69/1af41955530255ca2337bab370a75b3dbbb8be8707f6280c9efedfb77a85/fido2-1.0.0.tar.gz"
-    sha256 "2509a4958b666d747fd5754dfa9357da2d81b52edc0ecff75b68cea939154c02"
+    url "https://files.pythonhosted.org/packages/00/b9/0dfa7dec57ddec0d40a1a56ab28e6b97e31d1225787f2c80a7ab217e0ee6/fido2-1.1.0.tar.gz"
+    sha256 "2b4b4e620c2100442c20678e0e951ad6d1efb3ba5ca8ebb720c4c8d543293674"
+  end
+
+  resource "importlib_metadata" do
+    url "https://files.pythonhosted.org/packages/7e/ec/97f2ce958b62961fddd7258e0ceede844953606ad09b672fa03b86c453d3/importlib_metadata-5.0.0.tar.gz"
+    sha256 "da31db32b304314d044d3c12c79bd59e307889b287ad12ff387b3500835fc2ab"
+  end
+
+  resource "jaraco.classes" do
+    url "https://files.pythonhosted.org/packages/bf/02/a956c9bfd2dfe60b30c065ed8e28df7fcf72b292b861dca97e951c145ef6/jaraco.classes-3.2.3.tar.gz"
+    sha256 "89559fa5c1d3c34eff6f631ad80bb21f378dbcbb35dd161fd2c6b93f5be2f98a"
   end
 
   resource "jeepney" do
@@ -63,33 +66,33 @@ class AwsCredentialProcess < Formula
   end
 
   resource "jmespath" do
-    url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
     sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
+    url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
   end
 
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/01/92/9a1973e6132089e1263b0dc545a021d0733bf5d5b6fa19cc7e641e1925ae/keyring-23.7.0.tar.gz"
-    sha256 "782e1cd1132e91bf459fcd243bcf25b326015c1ac0b198e4408f91fa6791062b"
+    sha256 "ad192263e2cdd5f12875dedc2da13534359a7e760e77f8d04b50968a821c2361"
+    url "https://files.pythonhosted.org/packages/1c/35/c22960f14f5e17384296b2f09da259f8b5244fb3831eccec71cf948a49c6/keyring-23.11.0.tar.gz"
+  end
+
+  resource "more-itertools" do
+    sha256 "5a6257e40878ef0520b1803990e3e22303a41b5714006c32a3fd8304b26ea1ab"
+    url "https://files.pythonhosted.org/packages/13/b3/397aa9668da8b1f0c307bc474608653d46122ae0563d1d32f60e24fa0cbd/more-itertools-9.0.0.tar.gz"
   end
 
   resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
     sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
+    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
   end
 
   resource "pynentry" do
-    url "https://files.pythonhosted.org/packages/51/9b/73bc58d5db8cf930e15eeb4ec2208d3620e2328cada8d6d9e940a07d1f3a/pynentry-0.1.6.tar.gz"
     sha256 "755aee848bc927cf19285c3d798d95e4c58ebc81718fef85234e962cd2dd079c"
-  end
-
-  resource "pyOpenSSL" do
-    url "https://files.pythonhosted.org/packages/35/d3/d6a9610f19d943e198df502ae660c6b5acf84cc3bc421a2aa3c0fb6b21d1/pyOpenSSL-22.0.0.tar.gz"
-    sha256 "660b1b1425aac4a1bea1d94168a85d99f0b3144c869dd4390d27629d0087f1bf"
+    url "https://files.pythonhosted.org/packages/51/9b/73bc58d5db8cf930e15eeb4ec2208d3620e2328cada8d6d9e940a07d1f3a/pynentry-0.1.6.tar.gz"
   end
 
   resource "pyscard" do
-    url "https://files.pythonhosted.org/packages/10/00/8dcf33f0695ea3b1eac265c95a6d61cae138eb60527d9f58d7dd7b8cc812/pyscard-2.0.3.tar.gz"
-    sha256 "13c3e108163fac4f1237804ed20c5b1eb1bd5d5ee3e96adb60bfb6b9122f528d"
+    sha256 "dc13e34837addbd96c07a1a919fbc1677b2b83266f530a1f79c96930db42ccde"
+    url "https://files.pythonhosted.org/packages/07/64/62200892980cacc2968ab6e5ae6ddd345c8b96e2e2076aea9e0459fc540b/pyscard-2.0.5.tar.gz"
   end
 
   resource "python-dateutil" do
@@ -103,8 +106,8 @@ class AwsCredentialProcess < Formula
   end
 
   resource "SecretStorage" do
-    url "https://files.pythonhosted.org/packages/bc/3b/6e294fcaa5aed4059f2aa01a1ee7d343953521f8e0f6965ebcf63c950269/SecretStorage-3.3.2.tar.gz"
-    sha256 "0a8eb9645b320881c222e827c26f4cfcf55363e8b374a021981ef886657a912f"
+    url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
+    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
   end
 
   resource "six" do
@@ -117,21 +120,25 @@ class AwsCredentialProcess < Formula
     sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
-  resource "yubikey-manager" do
-    url "https://files.pythonhosted.org/packages/f8/67/734ba60a918822d2f35d5120e81a277f1f0274fcbd8e02ff7486ef9157cc/yubikey-manager-4.0.9.tar.gz"
-    sha256 "384e3a2a66df4ce417aede734eb8c5d0c1b7981290e9bc940c85cc000ef833b4"
+  resource "urllib3" do
+    url "https://files.pythonhosted.org/packages/c2/51/32da03cf19d17d46cce5c731967bf58de9bd71db3a379932f53b094deda4/urllib3-1.26.13.tar.gz"
+    sha256 "c083dd0dce68dbfbe1129d5271cb90f9447dea7d52097c6e0126120c521ddea8"
   end
 
-  resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/25/36/f056e5f1389004cf886bb7a8514077f24224238a7534497c014a6b9ac770/urllib3-1.26.10.tar.gz"
-    sha256 "879ba4d1e89654d9769ce13121e0f94310ea32e8d2f8cf587b77c08bbcdb30d6"
+  resource "yubikey_manager" do
+    url "https://files.pythonhosted.org/packages/3e/95/4ef7bfe063e595e9e7ed4c58228d1f07a2ccb3b3a55f01bb2128b347f900/yubikey_manager-5.0.0.tar.gz"
+    sha256 "c741747200ced1b5803dfdef6718b07a41e109ccb03dd7b72d3a307a3fb33bb5"
+  end
+
+  resource "zipp" do
+    url "https://files.pythonhosted.org/packages/8d/d7/1bd1e0a5bc95a27a6f5c4ee8066ddfc5b69a9ec8d39ab11a41a804ec8f0d/zipp-3.10.0.tar.gz"
+    sha256 "7a7262fd930bd3e36c50b9a64897aec3fafff3dfdeec9623ae22b40e93f99bb8"
   end
 
   def install
-    if OS.linux?
-      # Fixes: smartcard/scard/helpers.c:28:22: fatal error: winscard.h: No such file or directory
-      ENV.append "CFLAGS", "-I#{Formula["pcsc-lite"].opt_include}/PCSC"
-    end
+    # Fixes: smartcard/scard/helpers.c:28:22: fatal error: winscard.h: No such file or directory
+    ENV.append "CFLAGS", "-I#{Formula["pcsc-lite"].opt_include}/PCSC" if OS.linux?
+
     virtualenv_install_with_resources
   end
 
