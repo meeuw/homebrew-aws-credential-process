@@ -8,6 +8,12 @@ class AwsCredentialProcess < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/meeuw/aws-credential-process.git"
 
+  bottle do
+    root_url "https://github.com/meeuw/homebrew-aws-credential-process/releases/download/aws-credential-process-0.20.0"
+    sha256 cellar: :any,                 monterey:     "d332df70207fcc49d90583a3182a871968b81d9d287cccf898cb63bfb01d262e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1dd71a5e5036fe80a5963e60493c62b342a951a20521bd64b8bbfc277822d12c"
+  end
+
   depends_on "rust" => :build
   depends_on "swig" => :build
   depends_on "openssl@1.1"
